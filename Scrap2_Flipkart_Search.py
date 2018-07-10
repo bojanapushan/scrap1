@@ -15,7 +15,6 @@ import datetime
 
 
 baseurl="https://www.flipkart.com/search?&sort=price_desc&q="
-#search_key = 'iphone'
 search_key = input("Enter Search Word:")
 start_url = "{0}{1}".format(baseurl,search_key)
 
