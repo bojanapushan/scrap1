@@ -46,12 +46,23 @@ for page_num in page_nums:
         name=obj.findAll("div",{"class":"_3wU53n"})
         if name:
             name = name[0].text
+        else:
+            name = None
         rating=obj.findAll("div",{"class":"hGSR34 _2beYZw"})
         if rating:
             rating = rating[0].text
+            rating = rating.split()[0]
+            rating = float(rating)
+        else:
+            rating = None
         price=obj.findAll("div",{"class":"_1vC4OE _2rQ-NK"})
         if price:
             price = price[0].text
+            price = ''.join(e for e in price if e.isdigit())
+            price = float(price)
+        else:
+            price = None
+			
 
         items.append([name,rating,price,int(page_num)])
 
